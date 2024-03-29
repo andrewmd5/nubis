@@ -133,6 +133,14 @@ export class VoiceService extends BaseVoiceService {
 			throw new TempoError(TempoStatusCode.INVALID_ARGUMENT, 'Description is required');
 		}
 
+		if (record.title.length > 75) {
+			throw new TempoError(TempoStatusCode.INVALID_ARGUMENT, 'Title is too long');
+		}
+
+		if (record.description.length > 560) {
+			throw new TempoError(TempoStatusCode.INVALID_ARGUMENT, 'Description is too long');
+		}
+
 
 		const user = getUserFromContext(context.authContext);
 		// we don't need ALWAYS UP TO DATE user info, so we update whenver they create a feature request
