@@ -21,6 +21,7 @@ function renderFeatureRequest(request: IFeatureRequest, user: IUser, userVote: n
         emptyStateElement.style.display = 'none';
     }
     const featureRequest = document.createElement('div');
+    featureRequest.id = `${request.id}`;
     featureRequest.classList.add('feature-request');
 
     const requestName = document.createElement('h2');

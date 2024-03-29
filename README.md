@@ -28,7 +28,7 @@ This is a monorepo containing the following components:
 - **Voting System**: A voting mechanism to prioritize popular feature requests.
 
 ## Roadmap
-
+- Edit and delete feature requests
 - Simple administrative controls
 - Sorting and filtering options
 - Comment system for discussions
