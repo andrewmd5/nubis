@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import nubis from "../../nubis.json";
 import { ITokenPayload, IUser, TokenPayload } from './types.gen';
+import { Base64, TempoUtil } from '@tempojs/common';
 
 const steamApiBaseUrl = 'https://partner.steam-api.com';
 
@@ -111,8 +112,9 @@ async function generateToken(payload: ITokenPayload): Promise<string> {
     typ: "JWT",
   };
 
-  const encodedHeader = btoa(JSON.stringify(header));
-  const encodedPayload = btoa(TokenPayload.encodeToJSON(payload));
+
+  const encodedHeader = Base64.encode(TempoUtil.utf8GetBytes(JSON.stringify(header)));
+  const encodedPayload = Base64.encode(TempoUtil.utf8GetBytes(TokenPayload.encodeToJSON(payload)));
 
   const signature = await sign(`${encodedHeader}.${encodedPayload}`, nubis.auth.secret);
   return `${encodedHeader}.${encodedPayload}.${signature}`;
@@ -162,10 +164,7 @@ async function sign(input: string, secret: string): Promise<string> {
     ["sign"]
   );
   const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(input));
-
-  // Convert Uint8Array to base64 without using Buffer
-  const base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(signature) as unknown as number[]));
-  return base64String;
+  return Base64.encode(new Uint8Array(signature));
 }
 
 const app = new Hono();
@@ -310,8 +309,7 @@ app.get('/auth/steam/verify', async (c) => {
     };
 
     const token = await generateToken(payload);
-
-    return c.redirect(`${nubis.gateway.realm}?token=${token}`, 301);
+    return c.redirect(`${nubis.gateway.realm}?token=${encodeURIComponent(token)}`, 301);
   } catch (e) {
     console.error("Error", e);
     return c.redirect(`${nubis.gateway.realm}?error=${ErrorCode.InternalError}`, 301);

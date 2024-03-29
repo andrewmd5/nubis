@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@tempojs/common": "^0.0.12",
     "bebop": "^3.0.6",
     "hono": "^2.5.7"
   },

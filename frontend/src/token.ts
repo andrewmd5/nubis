@@ -18,7 +18,7 @@ export async function checkAuthToken(credentials: CallCredential): Promise<{ has
     const url = new URL(window.location.href);
     const searchParams = url.searchParams;
     if (searchParams.has('token')) {
-        const tokenValue = searchParams.get('token');
+        let tokenValue = searchParams.get('token');
         searchParams.delete('token'); // Remove the token from the URL search parameters
 
         // Update the URL in the address bar without reloading the page
@@ -26,6 +26,7 @@ export async function checkAuthToken(credentials: CallCredential): Promise<{ has
         if (!tokenValue) {
             return { hasAuth: false, message: 'The "token" query parameter exists but has no value.' };
         }
+        tokenValue = decodeURIComponent(tokenValue);
         const isExpired = isTokenExpired(tokenValue);
         if (isExpired) {
             return { hasAuth: false, message: 'The provided token is expired.' };

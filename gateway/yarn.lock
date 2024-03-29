@@ -953,6 +953,13 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
+"@tempojs/common@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@tempojs/common/-/common-0.0.12.tgz#ccf30297409deeab07bccc25190a2f135d9b4a6e"
+  integrity sha512-RZnfccLDaOQjK5Zj9K1jtnc8ij0I2edV0P7GgMQpGiHc9npgFCQEMIv2deTqd9RVZNAH93k+kKn1d4APvB5QCg==
+  dependencies:
+    bebop "^3.0.4"
+
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14", "@types/babel__core@^7.1.7":
   version "7.20.5"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.20.5.tgz#3df15f27ba85319caa07ba08d0721889bb39c017"
@@ -1278,7 +1285,7 @@ bebop-tools@^3.0.6:
   dependencies:
     wasi-js "^1.7.3"
 
-bebop@^3.0.6:
+bebop@^3.0.4, bebop@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/bebop/-/bebop-3.0.6.tgz#e347c85322b08e166954f143c662f6822046a67d"
   integrity sha512-czywO3L6wzl8wzphGLOCx0ViPjNM5gav/IoK3TRuq0hq6PzYF9MX3z/v1Rbf0DyYmeLFpruWziE0dTGwZOB4yg==
