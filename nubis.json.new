@@ -1,0 +1,41 @@
+{
+    "steam": {
+        "baseAppId": 388080,
+        "requiredAppId": 388080,
+        "dlcs": [
+            {
+                "appId": 393560,
+                "name": "Borderless Gaming",
+                "weight": 10
+            },
+            {
+                "appId": 388080,
+                "name": "Borderless Gaming",
+                "weight": 10
+            }
+        ],
+        "requiredDlcs": [],
+        "weightBonus": 10,
+        "apiKey": ""
+    },
+    "auth": {
+        "secret": ""
+    },
+    "gateway": {
+        "realm": "https://borderlessgam.ing",
+        "returnTo": "/auth/steam/verify",
+        "proxy": {
+            "accessToken": "",
+            "url": "https://openid-proxy.up.railway.app"
+        }
+    },
+    "site": {
+        "title": "Borderless Gaming",
+        "description": "Borderless Gaming is a simple tool that will allow you to turn your windowed video games into 'fullscreen' applications without all of the negative side effects.",
+        "company-name": "Borderless Gaming",
+        "featured-image-asset": "https://cdn.akamai.steamstatic.com/steam/apps/388080/header.jpg",
+        "canonical-url": "https://borderlessgam.ing",
+        "no-ownership-message": "It looks like you don't own Borderless Gaming on Steam. You can purchase it <a href='https://store.steampowered.com/app/388080/Borderless_Gaming/'>here</a>.",
+        "missing-dlc-message": "It looks like you don't own a DLC required to use this portal. You can purchase it <a href='https://store.steampowered.com/app/388080/Borderless_Gaming/'>here</a>."
+    }
+}

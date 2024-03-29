@@ -1,0 +1,6 @@
+name = "steam-auth"
+main = "src/index.ts"
+
+compatibility_date = "2022-11-22"
+[placement]
+mode = "smart"

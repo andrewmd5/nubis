@@ -1,0 +1,11 @@
+name = "steam-voice-backend"
+main = "./src/index.ts"
+compatibility_date = "2022-05-03"
+node_compat = true
+[build]
+command = "yarn build:schemas"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "prod-steam-voice"
+database_id = "c0c3722e-9358-4991-9006-56d37306a2a2"

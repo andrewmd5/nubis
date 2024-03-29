@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"module": "esnext",
+		"target": "es2020",
+		"lib": ["es2020", "DOM", "DOM.Iterable"],
+		"strict": true,
+		"alwaysStrict": true,
+		"preserveConstEnums": true,
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist", "test"]
+}

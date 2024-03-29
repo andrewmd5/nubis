@@ -1,0 +1,15 @@
+{
+	"include": [
+		"../schemas/**/*.bop"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	],
+	"generators": {
+		"ts": {
+			"outFile": "./src/client.gen.ts",
+			"services": "client"
+		}
+	}
+}

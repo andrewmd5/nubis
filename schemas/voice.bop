@@ -1,0 +1,85 @@
+struct Empty {}
+
+struct TokenPayload {
+    date exp;
+    User data;
+}
+
+/* A status for a feature request */
+enum FeatureRequestStatus {
+    /* The request has not been reviewed yet */
+    None = 0;
+    /* The request is pending review */
+    Pending = 1;
+    /* The request has been accepted */
+    Accepted = 2;
+    /* The request has been rejected */
+    Rejected = 3;
+}
+
+/* A user on Steam */
+struct User {
+    /* The user's SteamID */
+    uint64 id;
+    /* The user's name */
+    string name;
+    /* The user's level on Steam */
+    uint16 level;
+    /* The user's profile picture (URL) */
+    string avatar;
+    /* The user's playtime in the app */
+    uint32 playTime;
+    /* A list of the app ids the user owns */
+    uint32[] ownedApps;
+    /* The amount of weight the user has in the feature request system (0-100) */
+    byte weight;
+    /* The user's profile URL on Steam */
+    string profileUrl;
+}
+
+/* A feature request */
+message FeatureRequest {
+    /* A unique id for the feature request */ 
+    1 -> guid id;
+    /* The Steam ID of the user who created the request */
+    2 -> uint64 creatorId;
+    /* The amount of upvotes the request has */
+    3 -> uint32 upvotes;
+    /* The amount of downvotes the request has */
+    4 -> uint32 downvotes;
+    /* The status of the request */
+    5 -> FeatureRequestStatus status;
+    /* The title of the request */
+    6 -> string title;
+    /* The description of the request */
+    7 -> string description;
+    /* The date the request was created */
+    8 -> date created;
+    /* The date the request was last updated */
+    9 -> date updated;
+    /* The amount of weight the request has (0-100) */
+    10 -> byte weight;
+}
+
+
+struct FeatureRequestResponse {
+    FeatureRequest request;
+    User creator;
+   byte userVote;
+}
+
+struct VoteRequest {
+    guid featureRequestId;
+    byte vote;
+}
+
+/* A service for managing feature requests */
+service Voice {
+    /* Gets all feature request */
+    getFeatureRequests(Empty): stream FeatureRequestResponse;
+
+    createFeatureRequest(FeatureRequest): FeatureRequest;
+    deleteFeatureRequest(FeatureRequest): Empty;
+    vote(VoteRequest): Empty;
+    test(Empty): User;
+}

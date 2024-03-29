@@ -1,0 +1,16 @@
+{
+    "include": [
+        "../schemas/**/*.bop"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "generators": {
+        "ts": {
+            "outFile": "./src/types.gen.ts",
+            "services": "none",
+            "emitBinarySchema": false
+        }
+    }
+}

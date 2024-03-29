@@ -1,0 +1,23 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bebopc build && parcel build index.html --no-source-maps",
+    "start": "parcel index.html"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/optimizer-esbuild": "^2.12.0",
+    "@parcel/optimizer-swc": "^2.12.0",
+    "@parcel/plugin": "^2.12.0",
+    "bebop-tools": "3.0.6",
+    "process": "^0.11.10",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@tempojs/client": "^0.0.12",
+    "bebop": "3.0.6",
+    "parcel": "^2.12.0"
+  }
+}

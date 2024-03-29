@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}} - Feature Request</title>
+    <meta name="description" content="{{description}}">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Open Graph metadata for social sharing -->
+    <meta property="og:title" content="{{title}} - Feature Request">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{canonical-url}}">
+    <meta property="og:image" content="{{featured-image-asset}}">
+
+    <!-- Twitter Card metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{title}} - Feature Request">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:image" content="{{featured-image-asset}}">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Feature Request</h1>
+            <button class="hide" id="create-request-btn">Create a Request</button>
+        </div>
+    </header>
+
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="spinner"></div>
+    </div>
+
+
+    <div class="container">
+
+        <div id="sign-in-container" class="sign-in-container hide">
+            <h2>Welcome to {{title}} feature request portal!</h2>
+            <p>Sign in with your Steam account to view and submit feature requests.</p>
+            <button id="sign-in-btn" class="sign-in-btn">Sign in through Steam</button>
+            <div id="sign-in-error" class="sign-in-error"></div>
+        </div>
+        <div id="feature-requests" class="hide">
+            <h1>Feature Requests</h1>
+            <div id="feature-requests-list"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{company-name}}. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Store</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+
+    <div id="create-request-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Feature Request</h2>
+            <div class="modal-section">
+                <label for="request-title">Title:</label>
+                <input type="text" id="request-title" placeholder="Enter a title for your feature request">
+            </div>
+            <div class="modal-section">
+                <label for="request-description">Description:</label>
+                <textarea id="request-description" rows="5"
+                    placeholder="Provide a detailed description of your feature request"></textarea>
+            </div>
+            <button id="submit-request-btn">Submit Request</button>
+            <div id="loading-spinner" class="loading-spinner"></div>
+            <div id="request-status" class="request-status"></div>
+        </div>
+    </div>
+
+    <div class="empty-state">
+        <h2>There is nothing here...</h2>
+        <p>Check back soon or be the first to create a feature request!</p>
+    </div>
+
+    <script>
+        window.GatewayErrorMessages = {
+            0: "An error occurred while processing your request. Please try again later.",
+            1: "Authorization failed. Please try again.",
+            2: "{{no-ownership-message}}",
+            3: "{{missing-dlc-message}}",
+            4: "An error occurred communicating with Steam. Please try again later."
+        }
+    </script>
+    <script type="module" src="src/app.ts"></script>
+</body>
+
+</html>
