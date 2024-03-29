@@ -317,6 +317,13 @@ footer nav ul li a:hover {
     box-sizing: border-box;
 }
 
+.modal-section .hint {
+    bottom: -20px;
+    left: 0;
+    font-size: 12px;
+    color: #6b7c93;
+}
+
 #submit-request-btn {
     background-color: #6772e5;
     color: #ffffff;
