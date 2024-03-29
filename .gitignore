@@ -180,5 +180,5 @@ dist
 .wrangler
 .parcel-cache
 nubis.json
-DS_Store
+.DS_Store
 *.gen.ts
