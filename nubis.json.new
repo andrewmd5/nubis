@@ -36,6 +36,9 @@
         "featured-image-asset": "https://cdn.akamai.steamstatic.com/steam/apps/388080/header.jpg",
         "canonical-url": "https://borderlessgam.ing",
         "no-ownership-message": "It looks like you don't own Borderless Gaming on Steam. You can purchase it <a href='https://store.steampowered.com/app/388080/Borderless_Gaming/'>here</a>.",
-        "missing-dlc-message": "It looks like you don't own a DLC required to use this portal. You can purchase it <a href='https://store.steampowered.com/app/388080/Borderless_Gaming/'>here</a>."
+        "missing-dlc-message": "It looks like you don't own a DLC required to use this portal. You can purchase it <a href='https://store.steampowered.com/app/388080/Borderless_Gaming/'>here</a>.",
+        "store-url": "https://store.steampowered.com/app/388080/Borderless_Gaming/",
+        "homepage-url": "https://andrew.im",
+        "mail-to": "mailto:collab@andrew.im"
     }
 }
