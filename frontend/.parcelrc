@@ -5,5 +5,8 @@
             "./src/transformer",
             "@parcel/transformer-html"
         ]
+    },
+    "optimizers": {
+        "*.js": []
     }
 }

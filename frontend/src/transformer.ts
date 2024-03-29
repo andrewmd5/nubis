@@ -17,11 +17,10 @@ export default new Transformer({
                 let modifiedHtmlContent = htmlContent;
 
                 for (const key in siteData) {
-                    ;
-                    const regex = new RegExp(`{{${key}}}`, 'g');
+
+                    const regex = new RegExp(`{{(${key})}}`, 'g');
                     modifiedHtmlContent = modifiedHtmlContent.replace(regex, siteData[key]);
                 }
-
                 asset.setCode(modifiedHtmlContent);
             }
         }
