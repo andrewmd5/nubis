@@ -95,7 +95,7 @@ async function checkAppOwnership(steamId: string): Promise<OwnershipCheckResult 
   const apps = ownershipData.appownership.apps;
 
   const ownsBaseApp = apps.some(app => app.appid === nubis.steam.baseAppId && app.ownsapp);
-  const ownsRequiredDlcs = nubis.steam.requiredDlcs.length > 0 ? nubis.steam.requiredDlcs.every(dlc => apps.some(app => app.appid === dlc && app.ownsapp)) : true;
+  const ownsRequiredDlcs = nubis.steam.requiredDlcs.every(dlc => apps.some(app => app.appid === dlc && app.ownsapp));
   const ownedApps = apps.filter(app => app.ownsapp).map(app => ({ appid: app.appid }));
 
   return {
